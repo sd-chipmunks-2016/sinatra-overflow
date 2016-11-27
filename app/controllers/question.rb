@@ -5,7 +5,7 @@ end
 
 
 get '/questions/new' do
-  erb :'questions/new'
+  erb :'questions/new', layout: !request.xhr?
 end
 
 post '/questions' do

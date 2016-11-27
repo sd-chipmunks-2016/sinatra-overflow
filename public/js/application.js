@@ -45,6 +45,22 @@ $(document).ready(function() {
             form_opposite.find("button").removeClass("colored");
         });
     });
+
+
+// this call should present the new question form in the home page
+// but it doesn't work for some reason
+
+   $(".question_link").click(function(event) {
+      event.preventDefault();
+      $("#new_question_form").remove();
+      var url = $(this).attr('href');
+      
+      $ .get(url, function(response) {
+        $('.undernav').prepend(response);
+      });
+
+   });
+
 });
 
 

@@ -1,38 +1,26 @@
 body {
   counter-reset:section;
-  background-color: #e5efff;
   font-family: Verdana;
-  max-width: 75%;
-  margin: 0 auto;
+  max-width: 100%;
 }
 
 header {
-  background-color: #95b3e2;
-  padding: 5px 5px;
+  background-color: #333;
+  color: #e4e6e8;
+  padding: 3px;
+  width: 100%;
 }
 
 header h1 {
-  font-size: 11pt;
+  font-size: 24pt;
   display: inline;
+  font-family: 'Quicksand', sans-serif;
+  margin-left: 30px;
+  margin-right: 22px;
 }
-
-header p {
-  margin-left: 5px ;
-  font-size: 10pt;
-  display: inline;
-}
-
-header p a {
-  color: black;
-  text-decoration: none;
-}
-
-/*header p a:nth-child(n + 2):before {
-  content: " | ";
-}*/
 
 article {
-  margin: 5px 5px;
+  margin: 10px 10px 0px 10px;
 }
 
 article a.vote-button {
@@ -45,13 +33,13 @@ article a.vote-button {
 
 article h2 {
   display: inline;
-  font-size: 10pt;
+  font-size: 11pt;
 }
 
 article:before {
   counter-increment: section;
   color: #8C8C8C;
-  font-size: 10pt;
+  font-size: 11pt;
   content: counter(section) ". ";
 }
 
@@ -78,7 +66,6 @@ article p span.username:before {
   font-size: 10px;
   margin-left: 35px;
   margin-top: 4px;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -86,10 +73,45 @@ article p span.username:before {
 }
 
 
-.top-links a{
-  font-size: 15px;
-  float: right;
-  margin-right: 12px;
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+p.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    color: #e4e6e8;
+    text-decoration: none;
+    display: inline-block;
+    height: 24px;
+    padding: 10px 9px 5px 9px;
+    vertical-align: top;
+    font-size: 17px;
+}
+
+ul.topnav li a:hover {background-color: #555;}
+
+ul.topnav li.icon {display: none;}
+
+.topnav {
+  font-family: 'Raleway', sans-serif;
+  max-width: 100%;
+}
+
+.undernav {
+  font-family: 'Raleway', sans-serif;
+  background-color: white;
 }
 
 article p span.timestamp:after {
@@ -113,7 +135,6 @@ article p .smallgrey {
 
 article p a.delete:before {
   content: ' delete this post';
-
 
 }
 
@@ -178,39 +199,41 @@ form#posts input[type='submit'] {
 
 .upvote-form .colored {
   color: blue;
-  /*padding-top: 6px;*/
 }
 
-/*.nav {
-  background-color: #95b3e2;
-  float:top;
+h4 {
+  margin: none;
+}
+.newquestion {
+  margin: 10px;
 }
 
-.nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+#titlebox {
+  border-style: solid;  
+  border-width: 1px;
+  width: 40%;
+}
+
+#questionbox {
+  border-style: solid;  
+  border-width: 1px;
+  margin: 7px 0px 7px 0px;
+  width: 75%;
+  height: 75px;
+}
+
+.question-container {
+  list-style-type: none;
+}
+
+footer {
     background-color: #333;
-}
-
-.nav li {
-    float: left;
-}
-
-.nav li a {
-    display: block;
-    color: white;
+    width: 100%;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.nav a:hover:not(.active) {
-    background-color: #111;
-}
-*/
-/*.nav.active {
-background-color:#4CAF50;
-}*/
+    font-family: 'Quicksand', sans-serif;
+    color: #e4e6e8;
+    padding: 25px;
+    margin-top: 40px;
+  }   
+   
 
