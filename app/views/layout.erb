@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
   <link rel="stylesheet" href="/css/normalize.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <!--
-    application.css is where you put your styles
-  -->
   <link rel="stylesheet" href="/css/application.css">
-
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
-
-  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Oranienbaum|Quicksand|Raleway" rel="stylesheet"> 
+  <title>Swag Overflow</title>
 </head>
 <body>
   <header>
-    <h1>Swag Overflow</h1>
-    <p class="top-links">
     <% if user_logged_in? %>
-        <a href="/logout">Logout |</a>
-        <a href="/questions/new">new |</a>
-        <a href="#"> <%= User.find(session[:user_id]).username %> |</a>
+      <!-- <p class="topnav" id="greeting">Hi, <%= User.find(session[:user_id]).username %>!</p> -->
+      <ul class="topnav" id="myTopnav">
+        <li><h1>swag overflow</h1></li>
+        <li><a href="/questions">Home</a></li>
+        <li><a href="/questions/new">New Question</a></li>
+        <li><a href="/logout">Log Out</a></li>
+        <li class="icon">
+          <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+        </li>
+      </ul>
     <% else %>
-        <a href="/register">Register |</a>
-        <a href="/login">Login |</a>
+      <ul class="topnav" id="myTopnav">
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Log In</a></li>
+        <li class="icon">
+          <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+        </li>
+      </ul>
     <% end %>
-        <a href="/questions">| Home |</a>
-    </p>
   </header>
+  <div class="undernav">
   <%= yield %>
+  </div>
 </body>
+<footer>
+  <p class="motto">stay swaggy.</p>
+  <p class="copyright">swag overflow &copy; 2016</p>
+</footer>
 </html>
