@@ -5,10 +5,12 @@ body {
 }
 
 header {
+  position: fixed;
   background-color: #333;
   color: #e4e6e8;
   padding: 3px;
   width: 100%;
+  top: 0
 }
 
 header h1 {
@@ -100,7 +102,7 @@ ul.topnav li a {
     font-size: 17px;
 }
 
-ul.topnav li a:hover {background-color: #555;}
+/*ul.topnav li a:hover {background-color: #555;}*/
 
 ul.topnav li.icon {display: none;}
 
@@ -112,6 +114,7 @@ ul.topnav li.icon {display: none;}
 .undernav {
   font-family: 'Raleway', sans-serif;
   background-color: white;
+  margin-top: 40px
 }
 
 article p span.timestamp:after {
@@ -224,6 +227,7 @@ h4 {
 
 .question-container {
   list-style-type: none;
+  margin-top: 60px;
 }
 
 footer {

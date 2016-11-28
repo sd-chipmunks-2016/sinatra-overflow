@@ -2,12 +2,10 @@
 
 
 <div class='question-container'>
-  <% @questions.each do |question| %>
+  <% @sorted_questions.each do |question| %>
 
     <article id="<%= question.id %>">
-      
-      <h2><a id='title' href='/questions/<%= question.id %>'><%= question.title %></a></h2>
-        <form id="vote-arrows" method="post" action='/votes' class="upvote-form inline">
+      <form id="vote-arrows" method="post" action='/votes' class="upvote-form inline">
           <input type="hidden" name="voteable_type" value="Question"/>
           <input type="hidden" name="voteable_id" value=<%= question.id %>/>
           <input type="hidden" name="value" value="1"/>
@@ -22,6 +20,8 @@
           <input type="hidden" name="value" value="-1"/>
           <button type="submit" name="value" value="-1" class="fa fa-sort-asc vote-button downvote-button"></button>
         </form>
+      <h2><a id='title' href='/questions/<%= question.id %>'><%= question.title %></a></h2>
+        
       <h3 id='subtitle'><%= question.content %></h3>
       <p>
         <span class='smallgrey'><%=question.updated_at.strftime("%F")%></span>
