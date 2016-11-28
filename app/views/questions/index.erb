@@ -2,12 +2,10 @@
 
 
 <div class='question-container'>
-  <% @questions.each do |question| %>
+  <% @sorted_questions.each do |question| %>
 
     <article id="<%= question.id %>">
-      
-      <h2><a id='title' href='/questions/<%= question.id %>'><%= question.title %></a></h2>
-        <form id="vote-arrows" method="post" action='/votes' class="upvote-form inline">
+      <form id="vote-arrows" method="post" action='/votes' class="upvote-form inline">
           <input type="hidden" name="voteable_type" value="Question"/>
           <input type="hidden" name="voteable_id" value=<%= question.id %>/>
           <input type="hidden" name="value" value="1"/>
@@ -22,6 +20,8 @@
           <input type="hidden" name="value" value="-1"/>
           <button type="submit" name="value" value="-1" class="fa fa-sort-asc vote-button downvote-button"></button>
         </form>
+      <h2><a id='title' href='/questions/<%= question.id %>'><%= question.title %></a></h2>
+        
       <h3 id='subtitle'><%= question.content %></h3>
       <p>
         <span class='smallgrey'><%=question.updated_at.strftime("%F")%></span>
@@ -34,17 +34,7 @@
     </article>
 
   <% end %>
-</div>
 
-<div class="newquestion">
-<h4>New Question Form</h4>
-  <% if user_logged_in? %>
-    <form id="new_comment_form" class="form" method='post', action='/questions'>
-      <input id="titlebox" type='text' name='question[title]', placeholder="CSS margins"/><br>
-      <textarea id="questionbox"  name='question[content]' placeholder="Why are the default top and bottom margins for this form header TWENTY WHOLE PIXELS EACH? Anybody?"></textarea><br>
-      <input type="submit" class="button" value="Submit" ></input>
-    </form>
-  <% end %>
 </div>
 
 

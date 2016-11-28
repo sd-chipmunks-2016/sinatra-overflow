@@ -12,24 +12,21 @@
 <body>
   <header>
     <% if user_logged_in? %>
-      <!-- <p class="topnav" id="greeting">Hi, <%= User.find(session[:user_id]).username %>!</p> -->
       <ul class="topnav" id="myTopnav">
-        <li><h1>swag overflow</h1></li>
+        <li><h1><a class="app_title" href="/">swag overflow</a></h1></li>
         <li><a href="/questions">Home</a></li>
         <li><a class="question_link" href="/questions/new">New Question</a></li>
         <li><a href="/logout">Log Out</a></li>
-        <li class="icon">
-          <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-        </li>
+        <li id="username"><a><%=User.find(session[:user_id]).username%></a></li>
       </ul>
     <% else %>
+    <div id="top_banner">
       <ul class="topnav" id="myTopnav">
-        <li><a href="/register">Register</a></li>
-        <li><a href="/login">Log In</a></li>
-        <li class="icon">
-          <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-        </li>
+        <li><h1><a class="app_title" href="/">swag overflow</a></h1></li>
+        <li><a id="register" href="/register">Register</a></li>
+        <li><a id="login" href="/login">Log In</a></li>
       </ul>
+      </div>
     <% end %>
   </header>
   <div class="undernav">

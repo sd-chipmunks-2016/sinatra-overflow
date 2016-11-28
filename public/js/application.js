@@ -61,6 +61,33 @@ $(document).ready(function() {
 
    });
 
+   $("#register").on("click", function(event){
+    event.preventDefault()
+    $.ajax({
+      method: "GET",
+      url: "/register"
+    })
+      .done(function(request){
+        $("#login_div").remove()
+        $("fieldset").remove()
+        $(".undernav").prepend(request)
+        $("fieldset").css("border", "none")
+      });
+   });
+
+   $("#login").on("click", function(event){
+      event.preventDefault()
+      $.ajax({
+        method: "GET",
+        url: "/users/login"
+      })
+        .done(function(response){
+          $("fieldset").remove()
+          $("#login_div").remove()
+          $(".undernav").prepend(response)
+        });
+   })
+
 });
 
 
