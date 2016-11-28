@@ -34,17 +34,7 @@
     </article>
 
   <% end %>
-</div>
 
-<div class="newquestion">
-<h4>New Question Form</h4>
-  <% if user_logged_in? %>
-    <form id="new_comment_form" class="form" method='post', action='/questions'>
-      <input id="titlebox" type='text' name='question[title]', placeholder="CSS margins"/><br>
-      <textarea id="questionbox"  name='question[content]' placeholder="Why are the default top and bottom margins for this form header TWENTY WHOLE PIXELS EACH? Anybody?"></textarea><br>
-      <input type="submit" class="button" value="Submit" ></input>
-    </form>
-  <% end %>
 </div>
 
 

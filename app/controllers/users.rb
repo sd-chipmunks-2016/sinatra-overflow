@@ -1,5 +1,9 @@
 get '/register' do
-  erb :'users/new'
+	if request.xhr?
+		erb :"users/new", layout: false
+	else
+  		erb :'users/new'
+  	end
 end
 
 post '/users' do
@@ -7,9 +11,9 @@ post '/users' do
   redirect '/questions'
 end
 
-# get "/users/login" do
-# 	erb :"/users/login"
-# end
+get "/users/login" do
+	erb :"/users/login", layout: false
+end
 
 
 
